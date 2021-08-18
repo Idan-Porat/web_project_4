@@ -6,3 +6,14 @@
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/header/__line/header__line.css);
+
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__avatar-pic/profile__avatar-pic.css);
+@import url(../blocks/flex-container/flex-container.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__full-name/profile__full-name.css);
+@import url(../blocks/profile/__career/profile__career.css);
+@import url(../blocks/profile/__button/profile__button.css);
+@import url(../blocks/profile/__rectangle/profile__rectangle.css);
+@import url(../blocks/profile/__rectangle-pic/profile__rectangle-pic.css);
