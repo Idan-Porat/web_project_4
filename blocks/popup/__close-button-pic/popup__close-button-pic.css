@@ -1,0 +1,20 @@
+.popup__close-button-pic {
+    z-index:2;
+    height:40px;
+    margin:auto;
+    padding:0;
+    width:40px;
+    background-image:url(../../../images/Close-icon.svg);
+    background-position:center;
+    background-repeat:no-repeat;
+    background-color:#0000;
+    background-size:cover;
+    border:none;
+    cursor:pointer;
+    transform:rotate(-45deg);
+    transition:.2s ease-in;
+}
+
+.popup__close-button-pic:hover {
+    opacity:0.6;
+}

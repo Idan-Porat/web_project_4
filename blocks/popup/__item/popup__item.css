@@ -1,0 +1,29 @@
+.popup__item {
+    font-style: normal;
+    font-weight: normal;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 17px;
+    border:0;
+    color: #000;
+    margin:0 36px 29.74px 36px;
+    border-bottom:1px solid #bcbcc4;
+    ;
+}
+
+.popup__item:focus {
+    outline-color:#1192dd;
+  }
+
+.popup__item::placeholder {
+    font-size:14px;
+    line-height:17px;
+    color: #000000;
+  }
+
+@media screen and (min-width: 320px) and (max-width:972px) {
+    .popup__item {
+        margin-left:22px;
+        margin-right:22px;
+    }
+}  

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +7,33 @@
     <link rel="stylesheet" href="./pages/index.css">
     <title>Around The U.S.</title>
 </head>
-
 <body class="root">
     <div class="root__wrapper">
+        <div class="overlay"></div>
         <header class="header">
             <img src="./images/logo.svg" alt="header-logo" class="header__logo">
             <div class="header__line"></div>
         </header>
+        <section class="popup" id="popup">
+                <form class="popup__container">
+                    <div class="popup__close-button">
+                    <button class="popup__close-button-pic" type="submit" id="closeBtn"></button>
+                    </div>
+                    <h2 class="popup__header">Edit profile</h2>    
+                    <fieldset class="popup__input-container">
+                        <input id="formName" placeholder="Name" class="popup__item popup__item_name" type="text">
+                        <input id="formAbout" placeholder="About me" class="popup__item popup__item_about" type="text">
+                        <button class="popup__button" type="submit">Save</button>
+                    </fieldset>
+                </form>
+       </section>
         <main class="content">
             <section class="profile">
                 <div class="profile__avatar"></div>
                 <div class="profile__info">
                     <h1 class="profile__full-name">Jacques Cousteau</h1>
-                    <p class="profile__career">Explorer</p>
-                    <button class="profile__button"></button>
+                    <p class="profile__career">Programmer</p>
+                    <button class="profile__button" id="openBtn"></button>
                 </div>
                 <div class="profile__rectangle">
                     <img src="./images/rectangle-pic.svg" alt="profile__rectangle-pic" class="profile__rectangle-pic">
@@ -29,6 +41,7 @@
             </section>
         </main>
     </div>
+     <script src="script.js"></script>
 </body>
 
 </html>

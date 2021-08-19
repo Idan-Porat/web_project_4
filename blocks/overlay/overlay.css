@@ -1,0 +1,11 @@
+.overlay {
+    content: "";
+    position: absolute;
+    display:none;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    overflow: hidden;
+    background:#000000;
+    transition: 0.4s ease-in-out;
+}
