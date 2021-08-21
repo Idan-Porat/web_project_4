@@ -14,7 +14,7 @@
         grid-template-columns:1fr;
         grid-template-rows:auto auto;
         grid-template-areas: "full-name button"
-                             "career career";                     
+                             "career career";
       max-width:320px;
       margin-bottom:36px;
       gap:14px 10px;
