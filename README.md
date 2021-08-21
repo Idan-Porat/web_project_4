@@ -1,16 +1,40 @@
-# Project 4: Around The U.S.
+# Around The U.S.
 
-### Overview
+## Overview
 
-* Figma
+* Intro
+* Installation
 * Images
+* Future Plans	
 
-**Figma**
+-----------------------------------------------
 
-* [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+**Intro**
+
+This project is a site that allows you to create your own profile, put pictures from the trip or from anywhere you want.
+
+-----------------------------------------------
+
+**Installation**
+
+* Visual studio Code version 1.58.2 for to write the code.
+* HTML5
+* CSS
+* javascript
+* The site is optimized for 320px and 1280px screens.
+
+-----------------------------------------------
 
 **Images**
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
+![main-page](/images-for-Readme/main-page.png)
 
-Have fun with JavaScript!
+-----------------------------------------------
+
+**[Link to the website]()**
+
+-----------------------------------------------
+
+**Future Plans**
+
+* Add a database that the user will be able to save is information.	
