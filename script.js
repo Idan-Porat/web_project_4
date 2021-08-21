@@ -54,3 +54,13 @@ let popupElement = document.querySelector('.popup')
 // it will watch the submit event
 let changeText = document.querySelector('.popup');
 changeText.addEventListener('submit', handleFormSubmit);
+
+let likeButtons = document.querySelectorAll(".elements__like-button");
+
+function likeFunction(likeButton) {
+  likeButton.classList.toggle("elements__like-button_active");
+}
+
+for (let i = 0; i < likeButtons.length; i++) {
+  likeButtons[i].addEventListener("click", () => likeFunction(likeButtons[i]));
+}

@@ -1,0 +1,15 @@
+.elements__title {
+    width:225px;
+    text-align:left;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color:#000000;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    background:#ffffff;
+    margin:0px 0px 0px 21px;
+    background-size:282px 80px;
+}
