@@ -1,6 +1,6 @@
 .elements__inner-container {
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
     background:#ffffff;
     border-radius:10px;
