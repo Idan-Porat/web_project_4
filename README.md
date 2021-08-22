@@ -27,7 +27,8 @@ This project is a site that allows you to create your own profile, put pictures 
 
 **Images**
 
-![main-page](/images-for-Readme/main-page.png)
+![main-page](https://user-images.githubusercontent.com/65240374/130342252-f08cf4f3-fee8-4f12-9ec2-38da1bd6115b.png)
+
 
 -----------------------------------------------
 
