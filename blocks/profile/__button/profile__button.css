@@ -14,7 +14,6 @@
     box-sizing: border-box;
     cursor:pointer;
     transition:0.1s ease-in;
-    z-index:1;
 }
 
 .profile__button:hover {
