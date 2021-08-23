@@ -5,6 +5,7 @@
     grid-template-rows:auto auto;
     grid-gap:20px 17px;
     margin-bottom:0;
+    margin-top:0;
     padding:0;
 }
 
@@ -14,7 +15,5 @@
       margin:0px;
       grid-template-columns:auto;
       grid-gap:20px 0px;
-      margin-bottom:0;
-      padding:0;
     }
 }
