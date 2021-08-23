@@ -10,23 +10,22 @@
 </head>
 
 <body class="root">
+    <section class="popup" id="popup">
+        <div class="popup__container">
+            <div class="popup__close-button"><button  type="button" class="popup__close-button-pic"></button></div>
+            <h2 class="popup__header">Edit profile</h2>
+            <form class="popup__input-container">
+                <input id="formName" placeholder="Name" class="popup__item popup__item_type_name" name="Name" type="text">
+                <input id="formAbout" placeholder="About me" class="popup__item popup__item_type_about" name="career" type="text">
+                <button class="popup__button" type="submit">Save</button>
+            </form>
+        </div>
+    </section>
     <div class="root__wrapper">
-        <section class="popup" id="popup">
-            <div class="popup__container">
-                <button type="button" class="popup__close-button"><div class="popup__close-button-pic"></div></button>
-                <h2 class="popup__header">Edit profile</h2>
-                <form class="popup__input-container">
-                    <input id="formName" placeholder="Name" class="popup__item popup__item_type_name" name="Name" type="text">
-                    <input id="formAbout" placeholder="About me" class="popup__item popup__item_type_about" name="career" type="text">
-                    <button class="popup__button" type="submit">Save</button>
-                </form>
-            </div>
-        </section>
         <header class="header">
             <img src="./images/logo.svg" alt="header-logo" class="header__logo">
             <div class="header__line"></div>
         </header>
-
         <main class="content">
             <section class="profile">
                 <div class="profile__avatar"></div>
