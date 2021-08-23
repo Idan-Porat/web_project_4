@@ -13,11 +13,11 @@
     <div class="root__wrapper">
         <section class="popup" id="popup">
             <div class="popup__container">
-                <button class="popup__close-button"><div class="popup__close-button-pic"></div></button>
+                <button type="button" class="popup__close-button"><div class="popup__close-button-pic"></div></button>
                 <h2 class="popup__header">Edit profile</h2>
                 <form class="popup__input-container">
-                    <input id="formName" placeholder="Name" class="popup__item popup__item_name" type="text">
-                    <input id="formAbout" placeholder="About me" class="popup__item popup__item_about" type="text">
+                    <input id="formName" placeholder="Name" class="popup__item popup__item_type_name" name="Name" type="text">
+                    <input id="formAbout" placeholder="About me" class="popup__item popup__item_type_about" name="career" type="text">
                     <button class="popup__button" type="submit">Save</button>
                 </form>
             </div>
@@ -33,11 +33,11 @@
                 <div class="profile__info">
                     <h1 class="profile__full-name">Jacques Cousteau</h1>
                     <p class="profile__career">Explorer</p>
-                    <button class="profile__button" id="openBtn"></button>
+                    <button type="button" class="profile__button" id="openBtn"></button>
                 </div>
-                <div class="profile__rectangle">
+                <button type="button" class="profile__rectangle">
                     <img src="./images/rectangle-pic.svg" alt="profile__rectangle-pic" class="profile__rectangle-pic">
-                </div>
+                </button>
             </section>
 
             <section class="elements">
@@ -46,7 +46,7 @@
                         <img src="images/elements-lake-forest.jpg" alt="lake-forest" class="elements__pic">
                         <div class="elements__inner-container">
                             <h2 class="elements__title">Yosemite Valley</h2>
-                            <button class="elements__like-button">
+                            <button type="button" class="elements__like-button">
                                 <div class="elements__like-button-animation"></div>
                             </button>
                         </div>
@@ -57,7 +57,7 @@
                             class="elements__pic">
                         <div class="elements__inner-container">
                             <h2 class="elements__title">Lake Louise</h2>
-                            <button class="elements__like-button"></button>
+                            <button type="button" class="elements__like-button"></button>
                         </div>
                     </li>
 
@@ -66,7 +66,7 @@
                         <img src="images/elements-sunrise.png" alt="sunrise" class="elements__pic">
                         <div class="elements__inner-container">
                             <h2 class="elements__title">Bald Mountains</h2>
-                            <button class="elements__like-button"></button>
+                            <button type="button" class="elements__like-button"></button>
                         </div>
                     </li>
 
@@ -74,7 +74,7 @@
                         <img src="images/elements-mountain-night.png" alt="mountain-night" class="elements__pic">
                         <div class="elements__inner-container">
                             <h2 class="elements__title">Latemar</h2>
-                            <button class="elements__like-button"></button>
+                            <button type="button" class="elements__like-button"></button>
                         </div>
                     </li>
 
@@ -83,7 +83,7 @@
                             class="elements__pic">
                         <div class="elements__inner-container">
                             <h2 class="elements__title">Vanoise National Park</h2>
-                            <button class="elements__like-button"></button>
+                            <button type="button" class="elements__like-button"></button>
                         </div>
                     </li>
 
@@ -91,7 +91,7 @@
                         <img src="images/elements-boats.png" alt="boats" class="elements__pic">
                         <div class="elements__inner-container">
                             <h2 class="elements__title">Lago di Braies</h2>
-                            <button class="elements__like-button"></button>
+                            <button type="button" class="elements__like-button"></button>
                         </div>
                     </li>
                 </ul>
@@ -99,7 +99,7 @@
         </main>
 
         <footer class="footer">
-            <h3 class="footer__copyrights">© 2021 Idan Porat</h3>
+            <p class="footer__copyrights">© 2021 Idan Porat</p>
         </footer>
     </div>
     <script src="script.js"></script>

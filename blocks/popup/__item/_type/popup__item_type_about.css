@@ -1,13 +1,13 @@
-.popup__item_name {
+.popup__item_type_about {
    padding:0;
    padding-bottom:13px;
-   background: #fff;
+   margin-bottom:48px;
 }
 
-
 @media screen and (min-width: 320px) and (max-width:972px) {
-   .popup__item_name {
+   .popup__item_type_about {
       padding-bottom:9px;
-      margin-bottom:0px;
+      margin-top:30px;
+      margin-bottom:46px;
    }
 } 

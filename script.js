@@ -1,7 +1,7 @@
 let fullName = document.querySelector('.profile__full-name');
 let career = document.querySelector('.profile__career');
-let newFullName = document.querySelector('.popup__item_name');
-let newCareer = document.querySelector('.popup__item_about');
+let newFullName = document.querySelector('.popup__item_type_name');
+let newCareer = document.querySelector('.popup__item_type_about');
 let popup = document.querySelector(".popup");
 let popupClose = document.querySelector(".popup__close-button");
 
