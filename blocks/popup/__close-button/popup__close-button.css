@@ -2,6 +2,8 @@
     position:absolute;
     width:58px;
     min-height:58px;
+    background-color:transparent;
+    background-image:url(../../../images/close-button.png);
     border:none;
     box-sizing:border-box;
     background-repeat:no-repeat;
