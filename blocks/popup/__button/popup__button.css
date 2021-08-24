@@ -5,6 +5,7 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
+    margin-top:18px;
     text-align: center;
     color: #FFFFFF;
     cursor:pointer;
@@ -21,6 +22,7 @@
 @media screen and (min-width: 320px) and (max-width:972px) {
     .popup__button {
         height:46px;
+        margin-top:16px;
         font-size:14px;
         line-height:17px;
     }
