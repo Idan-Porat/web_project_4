@@ -17,13 +17,6 @@ function openPopupOrClose() {
   }
 }
 
-function savePopup() {
-   const newFullNameVal = newFullName.value;
-   const newCareerVal =  newCareer.value;
-   fullName.textContent = newFullNameVal;
-   career.textContent = newCareerVal;
-}
-
 let openPopupClick = document.querySelector('.profile__button');
 let closePopupClick = document.querySelector('.popup__close-button');
 openPopupClick.addEventListener("click",  openPopupOrClose);
@@ -35,7 +28,7 @@ function handleFormSubmit(evt) {
     career.textContent = newCareer.value;
     openPopupOrClose();
 }
- 
-popup.addEventListener('submit', handleFormSubmit); 
+let popupContainer = document.querySelector(".popup__input-container")
+popupContainer.addEventListener('submit', handleFormSubmit); 
  
 

@@ -12,9 +12,9 @@
 <body class="root">
     <section class="popup" id="popup">
         <div class="popup__container">
-            <button class="popup__close-button"></button>
+            <button type="button" class="popup__close-button"></button>
             <h2 class="popup__header">Edit profile</h2>
-            <form class="popup__input-container">
+            <form class="popup__input-container" name="form">
                 <input id="formName" placeholder="Name" class="popup__item popup__item_type_name" name="Name" type="text">
                 <input id="formAbout" placeholder="About me" class="popup__item popup__item_type_about" name="career" type="text">
                 <button class="popup__button" type="submit">Save</button>
@@ -42,9 +42,7 @@
                         <img src="images/elements-lake-forest.jpg" alt="lake-forest" class="elements__pic">
                         <div class="elements__inner-container">
                             <h2 class="elements__title">Yosemite Valley</h2>
-                            <button type="button" class="elements__like-button">
-                                <div class="elements__like-button-animation"></div>
-                            </button>
+                            <button type="button" class="elements__like-button"></button>
                         </div>
                     </li>
 
