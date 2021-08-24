@@ -6,14 +6,14 @@ let popup = document.querySelector(".popup");
 let popupClose = document.querySelector(".popup__close-button");
 
 function openPopupOrClose() {
-  if(!(popup.classList.contains("popup__open"))) {
-    popup.classList.add("popup__open");
+  if(!(popup.classList.contains("popup_open"))) {
+    popup.classList.add("popup_open");
     const newFullNameVal = fullName.textContent;
     const newCareerVal = career.textContent;
     newFullName.value = newFullNameVal;
     newCareer.value = newCareerVal
   } else {
-    popup.classList.remove("popup__open");
+    popup.classList.remove("popup_open");
   }
 }
 
