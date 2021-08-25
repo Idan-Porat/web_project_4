@@ -15,8 +15,10 @@
             <button type="button" class="popup__close-button"></button>
             <h2 class="popup__header">Edit profile</h2>
             <form class="popup__input-container" name="form">
-                <input id="formName" placeholder="Name" class="popup__item popup__item_type_name" name="Name" type="text">
-                <input id="formAbout" placeholder="About me" class="popup__item popup__item_type_about" name="career" type="text">
+                <input id="formName" placeholder="Name" class="popup__item popup__item_type_name" name="Name"
+                    type="text">
+                <input id="formAbout" placeholder="About me" class="popup__item popup__item_type_about" name="career"
+                    type="text">
                 <button class="popup__button" type="submit">Save</button>
             </form>
         </div>
@@ -38,56 +40,6 @@
 
             <section class="elements">
                 <ul class="elements__container">
-                    <li class="elements__card">
-                        <img src="images/elements-lake-forest.jpg" alt="lake-forest" class="elements__pic">
-                        <div class="elements__inner-container">
-                            <h2 class="elements__title">Yosemite Valley</h2>
-                            <button type="button" class="elements__like-button"></button>
-                        </div>
-                    </li>
-
-                    <li class="elements__card">
-                        <img src="images/elements-mountains-with-clouds.png" alt="mountains-with-clouds"
-                            class="elements__pic">
-                        <div class="elements__inner-container">
-                            <h2 class="elements__title">Lake Louise</h2>
-                            <button type="button" class="elements__like-button"></button>
-                        </div>
-                    </li>
-
-
-                    <li class="elements__card">
-                        <img src="images/elements-sunrise.png" alt="sunrise" class="elements__pic">
-                        <div class="elements__inner-container">
-                            <h2 class="elements__title">Bald Mountains</h2>
-                            <button type="button" class="elements__like-button"></button>
-                        </div>
-                    </li>
-
-                    <li class="elements__card">
-                        <img src="images/elements-mountain-night.png" alt="mountain-night" class="elements__pic">
-                        <div class="elements__inner-container">
-                            <h2 class="elements__title">Latemar</h2>
-                            <button type="button" class="elements__like-button"></button>
-                        </div>
-                    </li>
-
-                    <li class="elements__card">
-                        <img src="images/elements-mountains-with-lake.png" alt="mountains-with-lake"
-                            class="elements__pic">
-                        <div class="elements__inner-container">
-                            <h2 class="elements__title">Vanoise National Park</h2>
-                            <button type="button" class="elements__like-button"></button>
-                        </div>
-                    </li>
-
-                    <li class="elements__card">
-                        <img src="images/elements-boats.png" alt="boats" class="elements__pic">
-                        <div class="elements__inner-container">
-                            <h2 class="elements__title">Lago di Braies</h2>
-                            <button type="button" class="elements__like-button"></button>
-                        </div>
-                    </li>
                 </ul>
             </section>
         </main>
@@ -96,6 +48,15 @@
             <p class="footer__copyrights">© 2021 Idan Porat</p>
         </footer>
     </div>
+    <template id="elements__template">
+        <il class="elements__card">
+            <img class="elements__pic">
+            <div class="elements__inner-container">
+                <h2 class="elements__title"></h2>
+                <button type="button" class="elements__like-button"></button>
+            </div>
+        </il>
+    </template>
     <script src="script.js"></script>
 </body>
 
