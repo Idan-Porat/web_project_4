@@ -1,7 +1,7 @@
 .elements__like-button_active {
     display:block;
-    width: 11px;
-    height: 11px;
+    width: 12px;
+    height: 12px;
     background: #000000;
     transform: matrix(0.71, -0.71, 0.7, 0.71, 0, 0);
     padding:0;

@@ -22,7 +22,7 @@
 @media screen and (min-width: 320px) and (max-width:972px) {
     .popup__close-button {
         width:37px;
-        min-height:370px;
+        min-height:37px;
         background-size: 37px 37px;
         object-fit: contain;
         right: -5px;

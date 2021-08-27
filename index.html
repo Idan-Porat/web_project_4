@@ -10,14 +10,14 @@
 </head>
 
 <body class="root">
-    <section class="popup" id="popup">
+    <section class="popup " id="popup">
         <div class="popup__container">
             <button type="button" class="popup__close-button"></button>
-            <h2 class="popup__header">Edit profile</h2>
+            <h2 class="popup__header"></h2>
             <form class="popup__input-container" name="form">
-                <input id="formName" placeholder="Name" class="popup__item popup__item_type_name" name="Name"
+                <input id="formName" class="popup__item popup__item_type_name" name="Name"
                     type="text">
-                <input id="formAbout" placeholder="About me" class="popup__item popup__item_type_about" name="career"
+                <input id="formAbout" class="popup__item popup__item_type_about" name="career"
                     type="text">
                 <button class="popup__button" type="submit">Save</button>
             </form>
@@ -33,9 +33,9 @@
                 <div class="profile__info">
                     <h1 class="profile__full-name">Jacques Cousteau</h1>
                     <p class="profile__career">Explorer</p>
-                    <button type="button" class="profile__button" id="openBtn"></button>
+                    <button type="button" class="profile__button" id="editButton"></button>
                 </div>
-                <button type="button" class="profile__rectangle"></button>
+                <button type="button" class="profile__rectangle" id="addPhoto"></button>
             </section>
 
             <section class="elements">
