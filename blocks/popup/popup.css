@@ -1,10 +1,15 @@
 .popup {
     position:fixed;
-    display:none;
+    display:flex;
+    visibility:hidden;
     align-items:center;
     justify-content:center;
     width:100vw;
     height:100vh;
+    top:0;
+    opacity:0;
+    transition:.3s ease-in-out;
+    z-index:3;
 }
 
 .popup::after{

@@ -8,21 +8,29 @@
     <link type="text/css" rel="stylesheet" href="./pages/index.css">
     <title>Around The U.S.</title>
 </head>
-
 <body class="root">
-    <section class="popup " id="popup">
-        <div class="popup__container">
-            <button type="button" class="popup__close-button"></button>
-            <h2 class="popup__header"></h2>
+    <div class="popup popup_theme_edit-or-add-photo" id="popup">
+        <div class="popup__container popup__container_theme_edit-or-add-photo">
+            <button type="button" class="popup__close-button" aria-label="close button"></button>
             <form class="popup__input-container" name="form">
+                <h2 class="popup__header"></h2>
                 <input id="formName" class="popup__item popup__item_type_name" name="Name"
                     type="text">
                 <input id="formAbout" class="popup__item popup__item_type_about" name="career"
                     type="text">
-                <button class="popup__button" type="submit">Save</button>
+                <button class="popup__button" type="submit"></button>
             </form>
         </div>
-    </section>
+    </div>
+    <div class="popup popup_theme_open-photo" id="popup">
+        <div class="popup__container popup__container_theme_open-photo">
+            <button type="button" class="popup__close-button" aria-label="close button"></button>
+            <figure>
+                <img class="popup__open-image">
+            <figcaption class="popup__open-image-caption"></figcaption>
+            </figure>
+        </div>
+    </div>
     <div class="root__wrapper">
         <header class="header">
             <img src="./images/logo.svg" alt="header-logo" class="header__logo">
@@ -50,7 +58,8 @@
     </div>
     <template id="elements__template">
         <il class="elements__card">
-            <img class="elements__pic">
+            <button type="button" class="elements__delete-button"></button>
+            <div class="elements__pic"></div>
             <div class="elements__inner-container">
                 <h2 class="elements__title"></h2>
                 <button type="button" class="elements__like-button"></button>
