@@ -1,4 +1,4 @@
-.popup__button {
+.popup__submit-button {
     position:relative;
     background: #000000;
     border-radius: 2px;
@@ -17,12 +17,12 @@
     z-index:3;
 }
 
-.popup__button:hover {
+.popup__submit-button:hover {
     opacity: 0.8;
 }
 
 @media screen and (min-width: 320px) and (max-width:972px) {
-    .popup__button {
+    .popup__submit-button {
         height:46px;
         margin-top:16px;
         font-size:14px;

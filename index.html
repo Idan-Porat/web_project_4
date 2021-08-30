@@ -9,16 +9,29 @@
     <title>Around The U.S.</title>
 </head>
 <body class="root">
-    <div class="popup popup_theme_edit-or-add-photo">
-        <div class="popup__container popup__container_theme_edit-or-add-photo">
+    <div class="popup popup_theme_edit">
+        <div class="popup__container popup__container_theme_edit">
             <button type="button" class="popup__close-button" aria-label="close button"></button>
             <form class="popup__input-container" name="form">
-                <h2 class="popup__header"></h2>
-                <input id="formName" class="popup__item popup__item_type_name" name="Name"
+                <h2 class="popup__header">Edit Profile</h2>
+                <input placeholder="Name" id="formName" class="popup__item popup__item_type_name" name="Name"
                     type="text">
-                <input id="formAbout" class="popup__item popup__item_type_about" name="career"
+                <input placeholder="About Me" id="formAbout" class="popup__item popup__item_type_career" name="career"
                     type="text">
-                <button class="popup__button" type="submit"></button>
+                <button class="popup__submit-button" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_theme_add-photo" >
+        <div class="popup__container popup__container_theme_edit">
+            <button type="button" class="popup__close-button" aria-label="close button"></button>
+            <form class="popup__input-container" name="form">
+                <h2 class="popup__header">New place</h2>
+                <input placeholder="Title" class="popup__item popup__item_type_photo-title" name="image title"
+                    type="text">
+                <input placeholder="Image link" class="popup__item popup__item_type_url" name="Image link"
+                    type="text">
+                <button class="popup__submit-button" type="submit">Create</button>
             </form>
         </div>
     </div>
@@ -66,7 +79,8 @@
             </div>
         </il>
     </template>
-    <script src="script.js"></script>
+    <script src="./src/initial-cards.js"></script>
+    <script src="./src/script.js"></script>
 </body>
 
 </html>
