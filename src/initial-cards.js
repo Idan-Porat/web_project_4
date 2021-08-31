@@ -9,8 +9,8 @@ const initialCards = [
     },
   
     {
-      name: "Latemar",
-      link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+      name: "Midtown and Downtown Manhattan",
+      link: "https://images.unsplash.com/photo-1545328805-926d6a0950ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80.jpg"
     },
   
     {
