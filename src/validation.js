@@ -1,8 +1,9 @@
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
-  const {errorClass} = settings;
+  const {errorClass, errorInputSelector} = settings;
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   errorElement.textContent = errorMessage;
   errorElement.classList.add(errorClass);
+  inputElement.classList.add(errorInputSelector);
 };
 
 const hideInputError = (formElement, inputElement, settings) => {
@@ -76,7 +77,8 @@ const config = {
   submitButtonSelector: ".popup__submit-button",
   inactiveButtonClass: "popup__submit-button_disabled",
   inputErrorClass: "popup__item-error",
-  errorClass: "popup__item-error_active"
+  errorClass: "popup__item-error_active",
+  errorInputSelector: "popup__item_theme_red"
 };
 
 enableValidation(config);
