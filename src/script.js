@@ -34,7 +34,6 @@ function openPopup(popup) {
 }
 
 function closePopup(popup) {
-
   if (!(popupPhoto.classList.contains("popup_open"))) {
     popup.classList.remove("popup_open");
     resetPopup(popup);
