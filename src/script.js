@@ -52,7 +52,9 @@ const closeOverlayByClick = () => {
 closeOverlayByClick();
 
 function closeOnEscape(evt) {
-  closePopup(document.querySelector('.popup_open'));
+  if(evt.key === "Escape") {
+  closePopup(document.querySelector('.popup_open'))
+  }else {}
 }
 
 
