@@ -31,15 +31,12 @@ const cardImage = document.querySelectorAll(".elements__pic");
 
 function openPopup(popup) {
   popup.classList.add("popup_open");
+  document.addEventListener('keydown', closeOnEscape);
 }
 
 function closePopup(popup) {
-  if (!(popupPhoto.classList.contains("popup_open"))) {
-    popup.classList.remove("popup_open");
-    resetPopup(popup);
-  } else { 
-    popup.classList.remove("popup_open");
-  }
+  popup.classList.remove("popup_open");
+  document.removeEventListener('keydown', closeOnEscape);
 }
 
 const closeOverlayByClick = () => {
@@ -54,17 +51,10 @@ const closeOverlayByClick = () => {
 }
 closeOverlayByClick();
 
-const closeOverlayByEsc = () => {
-  const formList = Array.from(document.querySelectorAll(".popup"));
-  formList.forEach((formElement) => {
-    document.addEventListener("keydown", (evt) => {
-      if (evt.key === "Escape") {
-        closePopup(formElement);
-      }
-    });
-  });
+function closeOnEscape(evt) {
+  closePopup(document.querySelector('.popup_open'));
 }
-closeOverlayByEsc();
+
 
 closeEditForm.addEventListener("click", () => closePopup(editForm));
 
