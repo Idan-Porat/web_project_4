@@ -37,6 +37,9 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove("popup_open");
   document.removeEventListener('keydown', closeOnEscape);
+   if (!popupPhoto.classList.contains('popup_open')) {
+    resetPopup(popup);
+  }
 }
 
 const closeOverlayByClick = () => {
@@ -54,7 +57,7 @@ closeOverlayByClick();
 function closeOnEscape(evt) {
   if(evt.key === "Escape") {
   closePopup(document.querySelector('.popup_open'))
-  }else {}
+  }
 }
 
 
@@ -64,9 +67,9 @@ closeAddPhotoForm.addEventListener("click", () => closePopup(addPhotoForm));
 
 closePopupImage.addEventListener("click", () => closePopup(popupPhoto));
 
-openEditProfilePopupBtn.addEventListener("click", editprofile);
+openEditProfilePopupBtn.addEventListener("click", editProfile);
 
-function editprofile() {
+function editProfile() {
   const newFullNameVal = fullName.textContent;
   const newCareerVal = career.textContent;
   inputName.value = newFullNameVal;
