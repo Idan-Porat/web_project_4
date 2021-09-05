@@ -19,11 +19,11 @@
 
 **What do I do**
 
-<p>
-    <img alt="html5" src="https://img.shields.io/badge/html5.svg">
-    <img alt="css3" src="https://img.shields.io/badge/css3.svg">
-    <img alt="javascript" src="https://img.shields.io/badge/javascript.svg">
-</p>
+    (https://img.shields.io/badge/html5.svg)
+    
+    (https://img.shields.io/badge/css3.svg)
+    
+    (https://img.shields.io/badge/javascript.svg)
 -----------------------------------------------
 
 **Images**
