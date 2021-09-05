@@ -18,12 +18,12 @@
 -----------------------------------------------
 
 **What do I do**
-
-    (https://img.shields.io/badge/html5.svg)
+    ![](https://img.shields.io/badge/html5.svg)
     
-    (https://img.shields.io/badge/css3.svg)
+    ![](https://img.shields.io/badge/css3.svg)
     
-    (https://img.shields.io/badge/javascript.svg)
+    ![](https://img.shields.io/badge/javascript.svg)
+    
 -----------------------------------------------
 
 **Images**
