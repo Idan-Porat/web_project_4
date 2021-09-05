@@ -11,17 +11,17 @@
 
 **Intro**
 
-	* This project is a site that allows you to create your own profile, put pictures from the trip or from anywhere you want.
-	* The site is optimized for 320px and 1280px screens.
-	* Visual studio Code version 1.58.2 for to write the code.
+* This project is a site that allows you to create your own profile, put pictures from the trip or from anywhere you want.
+* The site is optimized for 320px and 1280px screens.
+* Visual studio Code version 1.58.2 for to write the code.
 
 -----------------------------------------------
 
 **What do I do**
 
-    	* HTML5 
-   	* CSS 
-    	* javascript 
+* HTML5 
+* CSS 
+* javascript 
     
 -----------------------------------------------
 
@@ -37,4 +37,4 @@
 
 **Future Plans**
 
-	* Add a database that the user will be able to save is information.	
+* Add a database that the user will be able to save is information.	
