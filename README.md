@@ -11,18 +11,19 @@
 
 **Intro**
 
-This project is a site that allows you to create your own profile, put pictures from the trip or from anywhere you want.
+* This project is a site that allows you to create your own profile, put pictures from the trip or from anywhere you want.
+* The site is optimized for 320px and 1280px screens.
+* Visual studio Code version 1.58.2 for to write the code.
 
 -----------------------------------------------
 
-**Installation**
+**What do I do**
 
-* Visual studio Code version 1.58.2 for to write the code.
-* HTML5
-* CSS
-* javascript
-* The site is optimized for 320px and 1280px screens.
-
+<p>
+    <img alt="html5" src="https://img.shields.io/badge/html5.svg">
+    <img alt="css3" src="https://img.shields.io/badge/css3.svg">
+    <img alt="javascript" src="https://img.shields.io/badge/javascript.svg">
+</p>
 -----------------------------------------------
 
 **Images**
@@ -31,7 +32,7 @@ This project is a site that allows you to create your own profile, put pictures 
 
 -----------------------------------------------
 
-**[Link to the website](https://porat5528.github.io/web_project_4/)**
+**[Take a look](https://idan-porat.github.io/web_project_4/index.html)**
 
 -----------------------------------------------
 
