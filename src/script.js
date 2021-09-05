@@ -35,11 +35,11 @@ function openPopup(popup) {
 }
 
 function closePopup(popup) {
-  popup.classList.remove("popup_open");
-  document.removeEventListener('keydown', closeOnEscape);
-   if (!popupPhoto.classList.contains('popup_open')) {
+  if (!popupPhoto.classList.contains('popup_open')) {
     resetPopup(popup);
   }
+  popup.classList.remove("popup_open");
+  document.removeEventListener('keydown', closeOnEscape);
 }
 
 const closeOverlayByClick = () => {

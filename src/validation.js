@@ -87,8 +87,10 @@ enableValidation(config);
 
 function resetPopup(popup) {
   const resetButton = popup.querySelector(".popup__submit-button");
-  resetButton.classList.add("popup__submit-button_disabled");
-  resetButton.disabled = true;
+  if (!popupPhoto.classList.contains('popup_open')) {
+    resetButton.classList.add("popup__submit-button_disabled");
+    resetButton.disabled = true;
+  }
 }
 
 
