@@ -1,3 +1,4 @@
+import Card from "./Card.js";
 
 const fullName = document.querySelector('.profile__full-name');
 const career = document.querySelector('.profile__career');
@@ -14,30 +15,34 @@ const newPhotoUrl = document.querySelector('.popup__item_type_url');
 const popup = document.querySelector(".popup");
 const editForm = document.querySelector(".popup_theme_edit");
 const closeEditForm = editForm.querySelector('.popup__close-button');
-const popupPhoto = document.querySelector(".popup_theme_open-photo");
-const closePopupImage = popupPhoto.querySelector('.popup__close-button');
+export const popupPhoto = document.querySelector(".popup_theme_open-photo");
+export const closePopupImage = popupPhoto.querySelector('.popup__close-button');
 const addPhotoForm = document.querySelector(".popup_theme_add-photo");
 const closeAddPhotoForm = addPhotoForm.querySelector('.popup__close-button');
 const popupContainer = document.querySelector('.popup__container');
-const popupImage = popupPhoto.querySelector(".popup__open-image");
-const popupOpenImageCaption = document.querySelector(".popup__open-image-caption");
+export const popupImage = popupPhoto.querySelector(".popup__open-image");
+export const popupOpenImageCaption = document.querySelector(".popup__open-image-caption");
 
 
-const elementsTemplate = document.querySelector("#elements__template").content;
-const elementsContainer = document.querySelector(".elements__container");
+export const elementsTemplate = document.querySelector("#elements__template").content;
+export const card = elementsTemplate.querySelector(".elements__card").cloneNode(true);
+export const elementsContainer = document.querySelector(".elements__container");
 const popupInputContainer = document.querySelector(".popup__input-container");
-const cardImage = document.querySelectorAll(".elements__pic");
+export const elementPic = document.querySelector(".elements__pic");
+export const elementTitle = document.querySelector(".elements__title");
+export const deleteButton = document.querySelector(".elements__delete-button");
+export const likeButton = document.querySelector(".elements__like-button");
 
 
-function openPopup(popup) {
+export function openPopup(popup) {
   popup.classList.add("popup_open");
 }
 
-function closePopup(popup) {
+export function closePopup(popup) {
   if (!(popupPhoto.classList.contains("popup_open"))) {
     popup.classList.remove("popup_open");
     resetPopup(popup);
-  } else { 
+  } else {
     popup.classList.remove("popup_open");
   }
 }
@@ -103,42 +108,13 @@ addPhotoForm.addEventListener('submit', submitAddPhotoForm);
 
 function submitAddPhotoForm(evt) {
   evt.preventDefault();
-  addElementCard({ name: newPhotoTitle.value, link: newPhotoUrl.value });
+  const cardInstance = new Card({name: newPhotoTitle.value, link: newPhotoUrl.value}, "#elements__template");
+  const cardElement = cardInstance.generateCard();
+  elementsContainer.prepend(cardElement);
   closePopup(addPhotoForm);
 }
 
-function addElementCard(item) {
-  elementsContainer.prepend(createCard(item));
-}
 
-function createCard(item) {
-  const card = elementsTemplate.querySelector(".elements__card").cloneNode(true);
-  const elementPic = card.querySelector(".elements__pic");
-  const elementTitle = card.querySelector(".elements__title");
-  const deleteButton = card.querySelector(".elements__delete-button");
-  const likeButton = card.querySelector(".elements__like-button");
-  elementPic.style.backgroundImage = `url(${item.link})`;
-  elementTitle.textContent = item.name;
 
-  likeButton.addEventListener("click", () => toggleLike(likeButton));
 
-  deleteButton.addEventListener("click", () => removeCard(card));
-
-  elementPic.addEventListener("click", () => {
-    openPopup(popupPhoto);
-    popupImage.src = item.link;
-    popupImage.alt = item.name;
-    popupOpenImageCaption.textContent = item.name;
-  });
-  return card;
-}
-initialCards.forEach(addElementCard);
-
-function removeCard(card) {
-  card.remove();
-}
-
-function toggleLike(likeButton) {
-  likeButton.classList.toggle("elements__like-button_active");
-}
 
