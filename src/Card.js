@@ -1,7 +1,7 @@
 import { initialCards } from "./initial-cards.js";
+import {popupImage, popupPhoto, popupOpenImageCaption, openNewPhotoForm} from "./script.js";
 
 const elementsContainer = document.querySelector(".elements__container");
-
 
 class Card {
     constructor(data, template) {

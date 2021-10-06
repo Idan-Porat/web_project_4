@@ -18,7 +18,17 @@ const popupPhoto = document.querySelector(".popup_theme_open-photo");
 const closePopupImage = popupPhoto.querySelector('.popup__close-button');
 const addPhotoForm = document.querySelector(".popup_theme_add-photo");
 const closeAddPhotoForm = addPhotoForm.querySelector('.popup__close-button');
+
+const popup = document.querySelector(".popup");
+const popupContainer = document.querySelector('.popup__container');
+const popupImage = popupPhoto.querySelector(".popup__open-image");
+const popupOpenImageCaption = document.querySelector(".popup__open-image-caption");
+
+
+const elementsTemplate = document.querySelector("#elements__template").content;
 const elementsContainer = document.querySelector(".elements__container");
+const popupInputContainer = document.querySelector(".popup__input-container");
+const cardImage = document.querySelectorAll(".elements__pic");
 
 
 const configs = {
@@ -127,7 +137,7 @@ function submitAddPhotoForm(evt) {
 }
 
 
-
+export {popupImage, popupPhoto, popupOpenImageCaption, openNewPhotoForm}
 
 
 
