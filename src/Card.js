@@ -1,5 +1,7 @@
 import { initialCards } from "./initial-cards.js";
-import { elementsContainer, openPopup, popupPhoto, popupOpenImageCaption, popupImage } from "./script.js";
+
+const elementsContainer = document.querySelector(".elements__container");
+
 
 class Card {
     constructor(data, template) {
@@ -28,7 +30,7 @@ class Card {
     }
 
     _handleOpenPopup() {
-        openPopup(popupPhoto);
+        openNewPhotoForm(popupPhoto);
         popupImage.src = this._image;
         popupImage.alt = this._title;
         popupOpenImageCaption.textContent = this._title;
@@ -49,6 +51,7 @@ class Card {
         this._element.querySelector(".elements__delete-button").addEventListener("click", () => {
             this._removeCard();
         });
+
     }
 
     _removeCard() {
@@ -65,5 +68,7 @@ initialCards.forEach(cardData => {
     const cardElement = cardInstance.generateCard();
     elementsContainer.prepend(cardElement);
 })
+
+
 
 export default Card;
