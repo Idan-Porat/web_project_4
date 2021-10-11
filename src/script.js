@@ -1,5 +1,6 @@
-import Card from "./Card.js";
+import Card from '../pages/Card.js';
 import FormValidator from './FormValidator.js';
+import { initialCards } from "./initial-cards.js";
 
 
 const fullName = document.querySelector('.profile__full-name');
@@ -31,7 +32,7 @@ const popupInputContainer = document.querySelector(".popup__input-container");
 const cardImage = document.querySelectorAll(".elements__pic");
 
 
-const configs = {
+const config = {
   formSelector: ".popup",
   inputSelectorSet: ".popup__set",
   inputSelector: ".popup__item",
@@ -42,25 +43,18 @@ const configs = {
   errorInputSelector: "popup__item_theme_red"
 };
 
-const editValidator = new FormValidator(configs, editForm);
-const addValidator = new FormValidator(configs, addPhotoForm);
+const editValidator = new FormValidator(config, editForm);
+const addValidator = new FormValidator(config, addPhotoForm);
 
 addValidator._enableValidation();
 editValidator._enableValidation();
 
-function openEditForm(popup) {
-  inputName.value = "";
-  inputCareer.value = "";
-  editValidator._resetPopup();
-  popup.classList.add("popup_open");
+function openPopup(popup) {
+  document.addEventListener("keydown", closeOverlayByEsc);
+  popup.addEventListener("click", closeOverlayByClick);
+  popup.classList.add('popup_open');
 }
 
-function openNewPhotoForm(popup) {
-  newPhotoTitle.value = "";
-  newPhotoUrl.value = "";
-  addValidator._resetPopup();
-  popup.classList.add("popup_open");
-}
 
 function closePopup(popup) {
   popup.classList.remove('popup_open');
@@ -106,15 +100,17 @@ function editprofile() {
   const newCareerVal = career.textContent;
   inputName.value = newFullNameVal;
   inputCareer.value = newCareerVal;
-  openEditForm(editForm);
+  editValidator._resetValidation();
+  openPopup(editForm);
 }
 
-openAddCardPopupBtn.addEventListener("click", addNewPhoto);
+openAddCardPopupBtn.addEventListener("click", handleAddPhotoClick );
 
-function addNewPhoto() {
+function handleAddPhotoClick () {
   newPhotoTitle.value = "";
   newPhotoUrl.value = "";
-  openNewPhotoForm(addPhotoForm);
+  addValidator._resetValidation();
+  openPopup(addPhotoForm);
 }
 
 editForm.addEventListener('submit', submitProfileForm);
@@ -136,9 +132,10 @@ function submitAddPhotoForm(evt) {
   closePopup(addPhotoForm);
 }
 
+initialCards.forEach(cardData => {
+  const cardInstance = new Card(cardData, "#elements__template");
+  const cardElement = cardInstance.generateCard();
+  elementsContainer.prepend(cardElement);
+})
 
-export {popupImage, popupPhoto, popupOpenImageCaption, openNewPhotoForm}
-
-
-
-
+export { popupImage, popupPhoto, popupOpenImageCaption, openPopup }

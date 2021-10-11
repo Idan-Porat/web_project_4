@@ -1,5 +1,4 @@
-import { initialCards } from "./initial-cards.js";
-import {popupImage, popupPhoto, popupOpenImageCaption, openNewPhotoForm} from "./script.js";
+import {popupImage, popupPhoto, popupOpenImageCaption, openPopup} from "../src/script.js";
 
 const elementsContainer = document.querySelector(".elements__container");
 
@@ -30,7 +29,7 @@ class Card {
     }
 
     _handleOpenPopup() {
-        openNewPhotoForm(popupPhoto);
+        openPopup(popupPhoto);
         popupImage.src = this._image;
         popupImage.alt = this._title;
         popupOpenImageCaption.textContent = this._title;
@@ -58,17 +57,9 @@ class Card {
         this._element.remove();
     }
 
-    _toggleLike() {
+    _toggleLike = () => {
         this._element.querySelector(".elements__like-button").classList.toggle("elements__like-button_active");
     }
 }
-
-initialCards.forEach(cardData => {
-    const cardInstance = new Card(cardData, "#elements__template");
-    const cardElement = cardInstance.generateCard();
-    elementsContainer.prepend(cardElement);
-})
-
-
 
 export default Card;
