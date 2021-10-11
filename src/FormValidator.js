@@ -1,12 +1,11 @@
-
 class FormValidator {
-  constructor(configs, formElement) {
-    this._configs = configs;
+  constructor(config, formElement) {
+    this._config = config;
     this._formElement = formElement;
   }
 
   _showInputError = (inputElement, errorMessage) => {
-    const { errorClass, errorInputSelector } = this._configs;
+    const { errorClass, errorInputSelector } = this._config;
     const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
     errorElement.textContent = errorMessage;
     errorElement.classList.add(errorClass);
@@ -14,10 +13,10 @@ class FormValidator {
   };
 
   _hideInputError = (inputElement) => {
-    const { inputErrorClass, errorClass } = this._configs;
+    const { inputErrorClass, errorClass, errorInputSelector } = this._config;
     const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove(inputErrorClass);
-    inputElement.classList.remove(errorClass);
+    errorElement.classList.remove(errorClass);
+    inputElement.classList.remove(errorInputSelector);
     errorElement.textContent = "";
   };
 
@@ -36,7 +35,7 @@ class FormValidator {
   };
 
   _toggleButtonState = () => {
-    const { inactiveButtonClass, submitButtonSelector } = this._configs;
+    const { inactiveButtonClass, submitButtonSelector } = this._config;
     this._buttonElement = this._formElement.querySelector(submitButtonSelector);
     if (this._hasInvalidInput()) {
       this._buttonElement.disabled = true;
@@ -48,7 +47,7 @@ class FormValidator {
   };
 
   _setEventListeners = () => {
-    const { inputSelector } = this._configs;
+    const { inputSelector } = this._config;
     this._inputList = Array.from(this._formElement.querySelectorAll(inputSelector));
     this._toggleButtonState();
 
@@ -68,7 +67,7 @@ class FormValidator {
     this._setEventListeners();
   };
 
-  _resetPopup = () => {
+  _resetValidation = () => {
     const inputArray = Array.from(this._inputList);
     this._toggleButtonState();
     this._inputList.forEach((input) => {
@@ -78,37 +77,3 @@ class FormValidator {
 }
 
 export default FormValidator;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
