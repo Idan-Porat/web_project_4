@@ -51,7 +51,7 @@ editValidator.enableValidation();
 
 function openPopup(popup) {
   document.addEventListener("keydown", closeOverlayByEsc);
-  popup.addEventListener("click", addRemoteClickListeners);
+  popup.addEventListener("click", handleRemoteClick);
   popup.classList.add('popup_open');
 }
 
@@ -59,28 +59,20 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove('popup_open');
   document.removeEventListener("keydown", closeOverlayByEsc);
-  popup.removeEventListener("click", addRemoteClickListeners);
+  popup.removeEventListener("click", handleRemoteClick);
 }
 
-
-const addRemoteClickListeners = () => {
-  const formList = Array.from(document.querySelectorAll(".popup"));
-  formList.forEach((formElement) => {
-    formElement.addEventListener("click", (e) => {
-      if (e.target.classList.contains("popup_open")) {
-        closePopup(formElement);
-      }
-    });
-  });
-}
-addRemoteClickListeners();
-
-function closeOverlayByEsc(evt) {
-  if(evt.key === "Escape") {
-  closePopup(document.querySelector('.popup_open'))
-  }
+const handleRemoteClick = (e) => { 
+  if (e.target.classList.contains("popup_open")) { 
+    closePopup(e.target); 
+  } 
 }
 
+const closeOverlayByEsc = (e) => { 
+  if(e.key === "Escape") { 
+  closePopup(document.querySelector('.popup_open')) 
+  } 
+} 
 
 closeEditForm.addEventListener("click", () => closePopup(editForm));
 
