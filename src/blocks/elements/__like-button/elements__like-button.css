@@ -1,6 +1,6 @@
 .elements__like-button {
     display:flex;
-    background-image:url(../../../images/like-logo.svg);
+    background-image:url(../../../../images/like-logo.svg);
     height:19px;
     width:21px;
     justify-content:center;

@@ -1,6 +1,6 @@
-import Card from '../pages/Card.js';
-import FormValidator from './FormValidator.js';
-import { initialCards } from "./initial-cards.js";
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
+import { initialCards } from "../initial-cards.js";
 
 
 const fullName = document.querySelector('.profile__full-name');
@@ -46,12 +46,12 @@ const config = {
 const editValidator = new FormValidator(config, editForm);
 const addValidator = new FormValidator(config, addPhotoForm);
 
-addValidator._enableValidation();
-editValidator._enableValidation();
+addValidator.enableValidation();
+editValidator.enableValidation();
 
 function openPopup(popup) {
   document.addEventListener("keydown", closeOverlayByEsc);
-  popup.addEventListener("click", closeOverlayByClick);
+  popup.addEventListener("click", addRemoteClickListeners);
   popup.classList.add('popup_open');
 }
 
@@ -59,11 +59,11 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove('popup_open');
   document.removeEventListener("keydown", closeOverlayByEsc);
-  popup.removeEventListener("click", closeOverlayByClick);
+  popup.removeEventListener("click", addRemoteClickListeners);
 }
 
 
-const closeOverlayByClick = () => {
+const addRemoteClickListeners = () => {
   const formList = Array.from(document.querySelectorAll(".popup"));
   formList.forEach((formElement) => {
     formElement.addEventListener("click", (e) => {
@@ -73,7 +73,7 @@ const closeOverlayByClick = () => {
     });
   });
 }
-closeOverlayByClick();
+addRemoteClickListeners();
 
 const closeOverlayByEsc = () => {
   const formList = Array.from(document.querySelectorAll(".popup"));
@@ -100,16 +100,16 @@ function editprofile() {
   const newCareerVal = career.textContent;
   inputName.value = newFullNameVal;
   inputCareer.value = newCareerVal;
-  editValidator._resetValidation();
+  editValidator.resetValidation();
   openPopup(editForm);
 }
 
-openAddCardPopupBtn.addEventListener("click", handleAddPhotoClick );
+openAddCardPopupBtn.addEventListener("click", handleAddPhotoClick);
 
-function handleAddPhotoClick () {
+function handleAddPhotoClick() {
   newPhotoTitle.value = "";
   newPhotoUrl.value = "";
-  addValidator._resetValidation();
+  addValidator.resetValidation();
   openPopup(addPhotoForm);
 }
 
