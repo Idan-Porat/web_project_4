@@ -1,4 +1,4 @@
-import {popupImage, popupPhoto, popupOpenImageCaption, openPopup} from "../src/script.js";
+import {popupImage, popupPhoto, popupOpenImageCaption, openPopup} from "../pages/index.js";
 
 const elementsContainer = document.querySelector(".elements__container");
 

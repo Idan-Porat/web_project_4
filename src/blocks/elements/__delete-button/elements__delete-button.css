@@ -18,7 +18,7 @@
 
 .elements__delete-button::before {
     position:absolute;
-    background-image:url(../../../images/trash-top.png);
+    background-image:url(../../../../images/trash-top.png);
     background-repeat:no-repeat;
     content:"";
     top:0px;
@@ -31,7 +31,7 @@
     position:absolute;
     content:"";
     background-repeat:no-repeat;
-    background-image:url(../../../images/trash-body.png);
+    background-image:url(../../../../images/trash-body.png);
     top:4.5px;
     right:1.5px;
     width:15.44px;
