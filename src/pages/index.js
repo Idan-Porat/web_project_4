@@ -1,6 +1,8 @@
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
 import { initialCards } from "../initial-cards.js";
+import PopupWithForm from '../components/PopupWithForm.js';
+import Section from '../components/Section.js';
 
 
 const fullName = document.querySelector('.profile__full-name');
@@ -49,30 +51,12 @@ const addValidator = new FormValidator(config, addPhotoForm);
 addValidator.enableValidation();
 editValidator.enableValidation();
 
-function openPopup(popup) {
-  document.addEventListener("keydown", closeOverlayByEsc);
-  popup.addEventListener("click", handleRemoteClick);
-  popup.classList.add('popup_open');
-}
 
 
-function closePopup(popup) {
-  popup.classList.remove('popup_open');
-  document.removeEventListener("keydown", closeOverlayByEsc);
-  popup.removeEventListener("click", handleRemoteClick);
-}
 
-const handleRemoteClick = (e) => { 
-  if (e.target.classList.contains("popup_open")) { 
-    closePopup(e.target); 
-  } 
-}
 
-const closeOverlayByEsc = (e) => { 
-  if(e.key === "Escape") { 
-  closePopup(document.querySelector('.popup_open')) 
-  } 
-} 
+
+
 
 closeEditForm.addEventListener("click", () => closePopup(editForm));
 
@@ -125,4 +109,6 @@ initialCards.forEach(cardData => {
   elementsContainer.prepend(cardElement);
 })
 
+
 export { popupImage, popupPhoto, popupOpenImageCaption, openPopup }
+
