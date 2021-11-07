@@ -1,37 +1,23 @@
-import Card from '../components/Card.js';
-import FormValidator from '../components/FormValidator.js';
-import { initialCards } from "../initial-cards.js";
-import PopupWithForm from '../components/PopupWithForm.js';
-import Section from '../components/Section.js';
+import { initialCards } from "../../src/components/initial-cards.js";
+import Card from '../../src/components/Card.js';
+import FormValidator from '../../src/components/FormValidator.js';
+import PopupWithImage from '../../src/components/PopupWithImage.js';
+import PopupWithForm from '../../src/components/PopupWithForm.js';
+import Section from '../../src/components/Section.js';
+import UserInfo from '../../src/components/UserInfo.js';
+import { closePopup, openPopup, editForm, editValidator, newPhotoTitle, newPhotoUrl, addValidator, inputName, inputCareer } from '../../src/components/utilities.js';
 
 
 const fullName = document.querySelector('.profile__full-name');
 const career = document.querySelector('.profile__career');
 const openEditProfilePopupBtn = document.querySelector('.profile__button');
 const openAddCardPopupBtn = document.querySelector('.profile__rectangle');
-
-const inputName = document.querySelector('.popup__item_type_name');
-const inputCareer = document.querySelector('.popup__item_type_career');
-const newPhotoTitle = document.querySelector('.popup__item_type_photo-title');
-const newPhotoUrl = document.querySelector('.popup__item_type_url');
-
-const editForm = document.querySelector(".popup_theme_edit");
 const closeEditForm = editForm.querySelector('.popup__close-button');
 const popupPhoto = document.querySelector(".popup_theme_open-photo");
 const closePopupImage = popupPhoto.querySelector('.popup__close-button');
 const addPhotoForm = document.querySelector(".popup_theme_add-photo");
 const closeAddPhotoForm = addPhotoForm.querySelector('.popup__close-button');
-
-const popup = document.querySelector(".popup");
-const popupContainer = document.querySelector('.popup__container');
-const popupImage = popupPhoto.querySelector(".popup__open-image");
-const popupOpenImageCaption = document.querySelector(".popup__open-image-caption");
-
-
-const elementsTemplate = document.querySelector("#elements__template").content;
 const elementsContainer = document.querySelector(".elements__container");
-const popupInputContainer = document.querySelector(".popup__input-container");
-const cardImage = document.querySelectorAll(".elements__pic");
 
 
 const config = {
@@ -45,18 +31,22 @@ const config = {
   errorInputSelector: "popup__item_theme_red"
 };
 
-const editValidator = new FormValidator(config, editForm);
-const addValidator = new FormValidator(config, addPhotoForm);
 
 addValidator.enableValidation();
 editValidator.enableValidation();
 
 
+const userInfo = new UserInfo({ nameSelector: '.profile__full-name', carrerSelector: '.profile__career' });
 
+function openPopupEdit() {
+  const userData = userInfo.getUserInfo();
+  inputName.value = userData.name;
+  inputCarrer.value = userData.carrer;
 
+  editValidator.resetValidation();
 
-
-
+  openPopup(popupEdit);
+}
 
 closeEditForm.addEventListener("click", () => closePopup(editForm));
 
@@ -108,7 +98,4 @@ initialCards.forEach(cardData => {
   const cardElement = cardInstance.generateCard();
   elementsContainer.prepend(cardElement);
 })
-
-
-export { popupImage, popupPhoto, popupOpenImageCaption, openPopup }
 
