@@ -1,12 +1,20 @@
-import {popupImage, popupPhoto, popupOpenImageCaption, openPopup} from "../pages/index.js";
-
-const elementsContainer = document.querySelector(".elements__container");
 
 class Card {
-    constructor(data, template) {
+    constructor(data, template, handleCardClick, handleRemove, handleLike, userId) {
         this._title = data.name;
         this._image = data.link;
         this._template = template;
+        this._handleCardClick = handleCardClick;
+        this._handleRemove = handleRemove;
+        this._handleLike = handleLike;
+        this._id = data._id;
+        this._likes = data.likes;
+        this._userId = userId;
+
+        this._cardTemplate = document
+        .querySelector(this._template)
+        .content
+        .querySelector(".elements__card");
     }
 
     _getTemplate() {
