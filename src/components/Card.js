@@ -1,20 +1,9 @@
-
 class Card {
-    constructor(data, template, handleCardClick, handleRemove, handleLike, userId) {
+    constructor(data, template, handleCardClick) {
         this._title = data.name;
         this._image = data.link;
         this._template = template;
         this._handleCardClick = handleCardClick;
-        this._handleRemove = handleRemove;
-        this._handleLike = handleLike;
-        this._id = data._id;
-        this._likes = data.likes;
-        this._userId = userId;
-
-        this._cardTemplate = document
-        .querySelector(this._template)
-        .content
-        .querySelector(".elements__card");
     }
 
     _getTemplate() {
@@ -36,18 +25,11 @@ class Card {
         return this._element;
     }
 
-    _handleOpenPopup() {
-        openPopup(popupPhoto);
-        popupImage.src = this._image;
-        popupImage.alt = this._title;
-        popupOpenImageCaption.textContent = this._title;
-    }
+    
 
     _setEventListeners() {
         // Open popup image.
-        this._element.querySelector(".elements__pic").addEventListener("click", () => {
-            this._handleOpenPopup();
-        });
+        this._element.querySelector(".elements__pic").addEventListener("click", () => this._handleCardClick());
 
         // Like button.
         this._element.querySelector(".elements__like-button").addEventListener("click", () => {
@@ -68,6 +50,7 @@ class Card {
     _toggleLike = () => {
         this._element.querySelector(".elements__like-button").classList.toggle("elements__like-button_active");
     }
+    
 }
 
 export default Card;
