@@ -1,4 +1,4 @@
-import FormValidator from './FormValidator.js';
+import FormValidator from '../components/FormValidator.js';
 
 export const fullName = document.querySelector('.profile__full-name');
 export const career = document.querySelector('.profile__career');
@@ -29,7 +29,7 @@ export const popupInputContainer = document.querySelector(".popup__input-contain
 export const cardImage = document.querySelectorAll(".elements__pic");
 
 
-export const config = {
+export const popupConfig = {
     formSelector: ".popup",
     inputSelectorSet: ".popup__set",
     inputSelector: ".popup__item",
@@ -37,11 +37,20 @@ export const config = {
     inactiveButtonClass: "popup__submit-button_disabled",
     inputErrorClass: "popup__item-error",
     errorClass: "popup__item-error_active",
-    errorInputSelector: "popup__item_theme_red"
+    errorInputSelector: "popup__item_theme_red",
+    imageModalWindow: '.popup_theme_open-photo',
+    editModalWindow:'.popup_theme_edit',
+    addPhotoModalWindow:'.popup_theme_add-photo',
+    elementsContainer: ".elements__container",
 };
 
-export const editValidator = new FormValidator(config, editForm);
-export const addValidator = new FormValidator(config, addPhotoForm);
+export const profileConfig = {
+    profileTitle: '.profile__full-name',
+    profileDescription: '.profile__career',
+};
+
+export const editValidator = new FormValidator(popupConfig, editForm);
+export const addValidator = new FormValidator(popupConfig, addPhotoForm);
 
 
 export function openPopup(popup) {
