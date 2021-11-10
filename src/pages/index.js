@@ -1,30 +1,23 @@
 import "./index.css"
-import { initialCards } from "../../src/components/initial-cards.js";
-import Card from '../../src/components/Card.js';
-import PopupWithImage from '../../src/components/PopupWithImage.js';
-import PopupWithForm from '../../src/components/PopupWithForm.js';
-import Section from '../../src/components/Section.js';
-import UserInfo from '../../src/components/UserInfo.js';
-import { closePopup, openPopup, editForm, editValidator, newPhotoTitle, newPhotoUrl, addValidator, inputName, inputCareer } from '../../src/components/utilities.js';
+import { initialCards } from "../utils/initial-cards.js";
+import Card from '../components/Card.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import PopupPhotoForm from '../components/PopupPhotoForm.js';
+import Section from '../components/Section.js';
+import UserInfo from '../components/UserInfo.js';
+import { closePopup, openPopup, editForm, editValidator, newPhotoTitle, newPhotoUrl, addValidator, inputName, inputCareer, popupConfig, profileConfig } from '../utils/utilities.js';
 
-
-const fullName = document.querySelector('.profile__full-name');
-const career = document.querySelector('.profile__career');
 const openEditProfilePopupBtn = document.querySelector('.profile__button');
 const openAddCardPopupBtn = document.querySelector('.profile__rectangle');
-const closeEditForm = editForm.querySelector('.popup__close-button');
-const popupPhoto = document.querySelector(".popup_theme_open-photo");
-const closePopupImage = popupPhoto.querySelector('.popup__close-button');
 const addPhotoForm = document.querySelector(".popup_theme_add-photo");
-const closeAddPhotoForm = addPhotoForm.querySelector('.popup__close-button');
 const elementsContainer = document.querySelector(".elements__container");
-
+const elementTemplate = "#elements__template";
 
 addValidator.enableValidation();
 editValidator.enableValidation();
 
-
-const userInfo = new UserInfo({ nameSelector: '.profile__full-name', carrerSelector: '.profile__career' });
+const userInfo = new UserInfo({ nameSelector: profileConfig.profileTitle, carrerSelector: profileConfig.profileDescription });
 
 function openPopupEdit() {
   const userData = userInfo.getUserInfo();
@@ -35,12 +28,6 @@ function openPopupEdit() {
 
   openPopup(editForm);
 }
-
-closeEditForm.addEventListener("click", () => closePopup(editForm));
-
-closeAddPhotoForm.addEventListener("click", () => closePopup(addPhotoForm));
-
-closePopupImage.addEventListener("click", () => closePopup(popupPhoto));
 
 openEditProfilePopupBtn.addEventListener("click", openPopupEdit);
 
@@ -56,45 +43,40 @@ function handleAddPhotoClick() {
 
 editForm.addEventListener('submit', submitProfileForm);
 
-function submitProfileForm(evt) {
-  evt.preventDefault();
-  fullName.textContent = inputName.value;
-  career.textContent = inputCareer.value;
+function submitProfileForm() {
+  userInfo.setUserInfo({ fullName: inputName.value, carrer: inputCareer.value });
   closePopup(editForm);
 }
 
 addPhotoForm.addEventListener('submit', createNewCard);
 
-const imagePopupModal = new PopupWithImage(".popup_theme_open-photo");
+const imagePopupModal = new PopupWithImage(popupConfig.imageModalWindow);
+const editProfilePopup = new PopupWithForm(popupConfig.editModalWindow, submitProfileForm);
+const addPhotoPopup = new PopupPhotoForm(popupConfig.addPhotoModalWindow, createNewCard);
 
-
-function createNewCard(cardData, template) {
-  const cardInstance = new Card( {name: newPhotoTitle.value, link: newPhotoUrl.value} , "#elements__template",
-  () => imagePopupModal.openPopup( {name: newPhotoTitle.value, link: newPhotoUrl.value} ));
+function createNewCard() {
+  const cardInstance = new Card({ name: newPhotoTitle.value, link: newPhotoUrl.value }, elementTemplate,
+    () => imagePopupModal.openPopup({ name: newPhotoTitle.value, link: newPhotoUrl.value }));
   const cardElement = cardInstance.generateCard();
-  elementsContainer.prepend(cardElement);
   cardList.addItem(cardElement);
   closePopup(addPhotoForm);
 }
 
 const cardList = new Section({
+  data: initialCards,
   renderer: (item) => {
-    const card = createNewCard(item, "#elements__template");
-
-    cardList.addItem(card);
+    const cardInstance = new Card(item, "#elements__template",
+      () => imagePopupModal.openPopup(item));
+    const cardElement = cardInstance.generateCard();
+    cardList.addItem(cardElement);
   }
-}, ".elements__container");
+}, popupConfig.elementsContainer);
 
 
+cardList.renderItems();
 
-initialCards.forEach(cardData => {
-  const cardInstance = new Card(cardData, "#elements__template", 
-  () => imagePopupModal.openPopup(cardData));
-  const cardElement = cardInstance.generateCard();
-  cardList.addItem(cardElement);
-  elementsContainer.prepend(cardElement);
-})
 
 imagePopupModal.setEventListeners();
-
+editProfilePopup.setEventListeners();
+addPhotoPopup.setEventListeners();
 

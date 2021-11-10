@@ -10,8 +10,8 @@ export default class UserInfo {
         return { name: this._name.textContent, carrer: this._carrer.textContent };
     }
 
-    setUserInfo({ name, carrer }) {
-        this._name.textContent = name;
+    setUserInfo({ fullName, carrer }) {
+        this._name.textContent = fullName;
         this._carrer.textContent = carrer;
     }
 }
