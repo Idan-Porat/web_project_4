@@ -4,19 +4,15 @@ class Card {
         this._image = data.link;
         this._template = template;
         this._handleCardClick = handleCardClick;
+        
+        this._cardTemplate = document
+        .querySelector(this._template).content
+        .querySelector(".elements__card");
     }
 
-    _getTemplate() {
-        const cardElement = document
-            .querySelector(this._template).content
-            .querySelector(".elements__card")
-            .cloneNode(true);
-
-        return cardElement;
-    }
 
     generateCard() {
-        this._element = this._getTemplate();
+        this._element =  this._cardTemplate.cloneNode(true);
 
         this._setEventListeners();
 
