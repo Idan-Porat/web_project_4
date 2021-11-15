@@ -68,7 +68,7 @@ class Card {
         this._element.querySelector(".element__like-counter").textContent = this._likes.length;
     }
 
-    _removeCard() {
+    removeCard() {
         this._element.remove();
     }
 
