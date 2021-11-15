@@ -31,6 +31,25 @@
             </form>
         </div>
     </div>
+
+    <div class="popup popup_theme_edit-avatar">
+        <div class="popup__container popup__container_theme_edit">
+            <button type="button" class="popup__close-button" aria-label="close button"></button>
+            <form class="popup__input-container" name="form" novalidate>
+                <fieldset class="popup__set">
+                    <h2 class="popup__header">Change profile picture</h2>
+                    <label class="popup__field">
+                        <input placeholder="Image link" id="url-input" class="popup__item popup__item_type_avatar"
+                            name="Image link" type="url" required>
+                        <span class="popup__item-error url-input-error"></span>
+                    </label>
+                    <button class="popup__submit-button popup__submit-button_disabled" type="submit"
+                        aria-label="sumbit button">Save</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
     <div class="popup popup_theme_add-photo">
         <div class="popup__container popup__container_theme_edit">
             <button type="button" class="popup__close-button" aria-label="close button"></button>
@@ -62,13 +81,26 @@
             </figure>
         </div>
     </div>
+    <div class="popup popup_theme_delete-photo">
+        <div class="popup__container popup__container_theme_edit">
+            <button type="button" class="popup__close-button" aria-label="close button"></button>
+            <h2 class="popup-box__title">Are you sure?</h2>
+            <form class="popup__input-container" name="form" novalidate>
+                <button type="submit" class="popup__submit-button">Yes</button>
+            </form>
+        </div>
+    </div>
     <div class="root__wrapper">
         <header class="header">
             <img src="<%=require('./images/logo.svg')%>" alt="header-logo" class="header__logo">
         </header>
         <main class="content">
             <section class="profile">
-                <div class="profile__avatar"></div>
+                <div class="avatar">
+                    <img class="avatar__image" src="<%=require('./images/Explorer.jpg')%>" alt="avatar-pic">
+                    </img>
+                    <button type="button" class="avatar__edit"></button>
+                </div>
                 <div class="profile__info">
                     <h1 class="profile__full-name">Jacques Cousteau</h1>
                     <p class="profile__career">Explorer</p>
@@ -93,7 +125,10 @@
             <div class="elements__pic"></div>
             <div class="elements__inner-container">
                 <h2 class="elements__title"></h2>
-                <button type="button" class="elements__like-button"></button>
+                <div class="elements__likes-container">
+                    <button type="button" class="elements__like-button"></button>
+                    <p class="element__like-counter"></p>
+                </div>
             </div>
         </il>
     </template>

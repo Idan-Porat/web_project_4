@@ -9,8 +9,10 @@ export const inputName = document.querySelector('.popup__item_type_name');
 export const inputCareer = document.querySelector('.popup__item_type_career');
 export const newPhotoTitle = document.querySelector('.popup__item_type_photo-title');
 export const newPhotoUrl = document.querySelector('.popup__item_type_url');
+export const inputAvatar = document.querySelector('.popup__item_type_avatar');
 
 export const editForm = document.querySelector(".popup_theme_edit");
+export const editAvatarForm = document.querySelector(".popup_theme_edit-avatar");
 export const closeEditForm = editForm.querySelector('.popup__close-button');
 export const popupPhoto = document.querySelector(".popup_theme_open-photo");
 export const closePopupImage = popupPhoto.querySelector('.popup__close-button');
@@ -27,6 +29,7 @@ export const elementsTemplate = document.querySelector("#elements__template").co
 export const elementsContainer = document.querySelector(".elements__container");
 export const popupInputContainer = document.querySelector(".popup__input-container");
 export const cardImage = document.querySelectorAll(".elements__pic");
+export const deleteCardBtn = document.querySelector(".elements__delete-button");
 
 
 export const popupConfig = {
@@ -41,16 +44,21 @@ export const popupConfig = {
     imageModalWindow: '.popup_theme_open-photo',
     editModalWindow:'.popup_theme_edit',
     addPhotoModalWindow:'.popup_theme_add-photo',
+    editAvatarModalWindow:'.popup_theme_edit-avatar',
+    deleteCardModalWindow:'.popup_theme_delete-photo',
     elementsContainer: ".elements__container",
 };
 
 export const profileConfig = {
     profileTitle: '.profile__full-name',
     profileDescription: '.profile__career',
+    avatarImage:'.avatar__image',
 };
 
 export const editValidator = new FormValidator(popupConfig, editForm);
 export const addValidator = new FormValidator(popupConfig, addPhotoForm);
+export const avatarValidator = new FormValidator(popupConfig, editAvatarForm);
+
 
 
 export function openPopup(popup) {
